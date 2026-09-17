@@ -1,61 +1,47 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Layers } from "lucide-react";
-import { PROJECTS, CATEGORIES } from "../data/portfolioData";
 import ProjectCard from "./ProjectCard";
+import { PROJECTS } from "../data/portfolioData";
 
 export default function Projects() {
-    const [activeFilter, setActiveFilter] = useState("All");
+    const [showNotice, setShowNotice] = useState(false);
 
-    const filteredProjects =
-        activeFilter === "All"
-            ? PROJECTS
-            : PROJECTS.filter((p) => p.category === activeFilter);
+    const handleProjectClick = (e) => {
+        e.preventDefault();
+        setShowNotice(true);
+        setTimeout(() => setShowNotice(false), 3000);
+    };
 
     return (
-        <section
-            id="projects"
-            className="py-20 border-t border-stone-800/80 w-full"
-        >
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-                <div>
-                    <div className="flex items-center gap-2 text-stone-400 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-2">
-                        <Layers className="w-4 h-4 text-purple-400" />
-                        <span>Selected Work</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-                        Featured Projects
-                    </h2>
-                </div>
+        <section id="projects" className="py-20 relative">
+            <div className="max-w-6xl mx-auto px-4">
+                <h2 className="text-3xl font-extrabold mb-8 text-white">
+                    Featured Projects
+                </h2>
 
-                {/* Category Filters (Horizontal Scrollable on Mobile) */}
-                <div className="flex gap-2 bg-stone-900 p-1.5 rounded-xl border border-stone-800 overflow-x-auto max-w-full">
-                    {CATEGORIES.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => setActiveFilter(cat)}
-                            className={`text-xs font-semibold px-3.5 py-2 rounded-lg transition-all whitespace-nowrap ${
-                                activeFilter === cat
-                                    ? "bg-purple-600 text-white shadow-md"
-                                    : "text-stone-400 hover:text-white"
-                            }`}
-                        >
-                            {cat}
-                        </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {PROJECTS.map((project) => (
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            onProjectClick={handleProjectClick}
+                        />
                     ))}
                 </div>
             </div>
 
-            <motion.div
-                layout
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-                <AnimatePresence mode="popLayout">
-                    {filteredProjects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
-                    ))}
-                </AnimatePresence>
-            </motion.div>
+            {/* Temporary Popup Banner */}
+            {showNotice && (
+                <div className="fixed bottom-6 right-6 bg-stone-900 border border-purple-500/40 text-stone-200 px-5 py-3.5 rounded-xl shadow-2xl z-50 flex items-center gap-3">
+                    <span className="relative flex h-3 w-3">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                    </span>
+                    <p className="text-sm font-medium">
+                        🚀 This project is currently under active development.
+                        Stay tuned!
+                    </p>
+                </div>
+            )}
         </section>
     );
 }

@@ -1,59 +1,43 @@
-import { motion } from "framer-motion";
-import { GitBranch, ExternalLink } from "lucide-react";
+import { ExternalLink, GitBranch } from "lucide-react";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onProjectClick }) {
     return (
-        <motion.div
-            layout
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4 }}
-            className="group bg-stone-900/40 border border-stone-800/80 rounded-2xl p-8 flex flex-col justify-between hover:border-stone-700 hover:bg-stone-900/70 transition-all relative overflow-hidden"
-        >
+        <div className="bg-stone-900/60 border border-stone-800 rounded-2xl p-6 hover:border-stone-700 transition-all flex flex-col justify-between">
             <div>
-                <div className="flex justify-between items-start mb-4">
-                    <span className="text-xs font-mono text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
-                        {project.category}
-                    </span>
-                    <div className="flex items-center gap-3 text-stone-400">
-                        <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-white transition-colors"
-                        >
-                            <GitBranch className="w-5 h-5" />
-                        </a>
-                        <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-white transition-colors"
-                        >
-                            <ExternalLink className="w-5 h-5" />
-                        </a>
-                    </div>
-                </div>
-
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2">
                     {project.title}
                 </h3>
-                <p className="text-stone-400 text-sm leading-relaxed mb-6">
+                <p className="text-stone-400 text-sm mb-4 leading-relaxed">
                     {project.description}
                 </p>
+
+                {/* Render tags array safely */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {(project.tags || []).map((tag, index) => (
+                        <span
+                            key={index}
+                            className="text-xs font-mono bg-stone-800 text-purple-300 px-2.5 py-1 rounded-md"
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-4 border-t border-stone-800/60">
-                {project.tags.map((tag) => (
-                    <span
-                        key={tag}
-                        className="text-xs text-stone-400 font-mono"
-                    >
-                        #{tag}
-                    </span>
-                ))}
+            <div className="flex items-center gap-4 pt-4 border-t border-stone-800/60">
+                <button
+                    onClick={onProjectClick}
+                    className="flex items-center gap-1.5 text-sm text-stone-300 hover:text-white transition-colors"
+                >
+                    <ExternalLink className="w-4 h-4" /> Live Demo
+                </button>
+                <button
+                    onClick={onProjectClick}
+                    className="flex items-center gap-1.5 text-sm text-stone-300 hover:text-white transition-colors"
+                >
+                    <GitBranch className="w-4 h-4" /> Code
+                </button>
             </div>
-        </motion.div>
+        </div>
     );
 }
