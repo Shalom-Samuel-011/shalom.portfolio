@@ -1,49 +1,65 @@
 export const SKILLS = [
-    "JavaScript",
+    "JavaScript (ES6+)",
+    "TypeScript",
     "React",
     "Next.js",
     "Node.js",
-    "Express",
+    "Express.js",
     "MongoDB",
+    "Mongoose",
     "Tailwind CSS",
     "Redux",
     "Git",
 ];
 
-export const CATEGORIES = ["All", "Full Stack", "Frontend", "Backend / API"];
+export const CATEGORIES = ["All", "Full Stack", "Frontend"];
 
 export const PROJECTS = [
     {
         id: 1,
-        title: "Fast Pizza Co.",
+        title: "Custom Stitching & Tailoring Platform",
         category: "Full Stack",
         description:
-            "A real-time pizza ordering platform featuring interactive cart management, geolocation order routing, and live status updates.",
-        tags: ["React", "Tailwind CSS", "React Router", "Redux"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
+            "A feature-complete e-commerce and logistics platform supporting multi-role access (Customers, Tailors, Admins), immutable body measurement snapshots, multi-stage order state fulfillment, and JWT RBAC security.",
+        tags: [
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Mongoose",
+            "React",
+            "Next.js",
+        ],
+        liveUrl: "https://example.com", // Replace with actual URL if available
+        githubUrl: "https://github.com/Shalom-Samuel-011",
         featured: true,
     },
     {
         id: 2,
-        title: "Dev Workflow Metrics",
-        category: "Backend / API",
+        title: "Interactive Geospatial Travel Logger",
+        category: "Full Stack",
         description:
-            "Developer productivity tool that integrates with GitHub REST API to visualize commit history, PR velocity, and code quality stats.",
-        tags: ["Node.js", "Express", "MongoDB", "Chart.js"],
+            "A full-stack spatial web application featuring JWT authentication, user-specific location persistence in MongoDB, Leaflet map coordinate URL syncing, and real-time reverse geocoding.",
+        tags: [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Leaflet API",
+            "Tailwind CSS",
+        ],
         liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
+        githubUrl: "https://github.com/Shalom-Samuel-011",
         featured: true,
     },
     {
         id: 3,
-        title: "Modern UI Design System",
+        title: "Developer Portfolio & Interactive Showcases",
         category: "Frontend",
         description:
-            "Accessible, component-driven UI library built with React, Tailwind, and Radix Primitives for rapid full-stack prototyping.",
-        tags: ["React", "Tailwind CSS", "Storybook"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
-        featured: false,
+            "A high-performance personal developer platform built with Next.js App Router, featuring modular Tailwind CSS UI engineering, architecture breakdowns, and direct contact integration.",
+        tags: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
+        liveUrl: "https://shalom-portfolio.vercel.app", // Your live Vercel link
+        githubUrl: "https://github.com/Shalom-Samuel-011/shalom.portfolio",
+        featured: true,
     },
 ];
