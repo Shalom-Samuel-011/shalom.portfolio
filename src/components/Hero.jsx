@@ -54,6 +54,7 @@ export default function Hero() {
                 </a>
                 <a
                     href="/resume.pdf"
+                    download="Shalom_Samuel_CV.pdf"
                     target="_blank"
                     rel="noreferrer"
                     className="border border-stone-800 bg-stone-900/50 hover:bg-stone-800 text-stone-200 font-semibold px-7 py-3.5 rounded-full transition-colors text-center"
