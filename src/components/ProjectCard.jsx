@@ -24,7 +24,7 @@ export default function ProjectCard({ project }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.4 }}
-            className="group bg-brown/40 border border-brown/80 rounded-2xl p-8 flex flex-col justify-between hover:border-muted hover:bg-brown/70 transition-all relative overflow-hidden"
+            className="group min-h-[360px] bg-brown/40 border border-brown/80 rounded-2xl p-8 flex flex-col justify-between hover:border-muted hover:bg-brown/70 transition-all relative overflow-hidden"
         >
             {isInteractiveCard ? (
                 <button
