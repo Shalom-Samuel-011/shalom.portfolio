@@ -29,7 +29,8 @@ export const PROJECTS = [
             "React",
             "Next.js",
         ],
-        liveUrl: "https://example.com", // Replace with actual URL if available
+        liveUrl: "",
+        isInDevelopment: true,
         githubUrl: "https://github.com/Shalom-Samuel-011",
         featured: true,
     },
@@ -47,7 +48,7 @@ export const PROJECTS = [
             "Leaflet API",
             "Tailwind CSS",
         ],
-        liveUrl: "https://example.com",
+        liveUrl: "https://world-wise-shalom23.vercel.app",
         githubUrl: "https://github.com/Shalom-Samuel-011",
         featured: true,
     },
@@ -58,7 +59,7 @@ export const PROJECTS = [
         description:
             "A high-performance personal developer platform built with Next.js App Router, featuring modular Tailwind CSS UI engineering, architecture breakdowns, and direct contact integration.",
         tags: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
-        liveUrl: "https://shalom-portfolio.vercel.app", // Your live Vercel link
+        isCurrentSite: true,
         githubUrl: "https://github.com/Shalom-Samuel-011/shalom.portfolio",
         featured: true,
     },
