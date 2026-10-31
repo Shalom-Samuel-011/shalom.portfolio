@@ -29,9 +29,9 @@ export const PROJECTS = [
             "React",
             "Next.js",
         ],
-        liveUrl: "",
-        isInDevelopment: true,
-        githubUrl: "https://github.com/Shalom-Samuel-011",
+        liveUrl: "https://darzaani.vercel.app",
+        isInDevelopment: false,
+        githubUrl: "https://github.com/Shalom-Samuel-011/Darzaani",
         featured: true,
     },
     {
