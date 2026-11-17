@@ -49,7 +49,7 @@ export const PROJECTS = [
             "Tailwind CSS",
         ],
         liveUrl: "https://world-wise-shalom23.vercel.app",
-        githubUrl: "https://github.com/Shalom-Samuel-011",
+        githubUrl: "https://github.com/Shalom-Samuel-011/WorldWise",
         featured: true,
     },
     {
@@ -57,8 +57,8 @@ export const PROJECTS = [
         title: "Developer Portfolio & Interactive Showcases",
         category: "Frontend",
         description:
-            "A high-performance personal developer platform built with Next.js App Router, featuring modular Tailwind CSS UI engineering, architecture breakdowns, and direct contact integration.",
-        tags: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
+            "A responsive React portfolio built with Vite and Tailwind CSS v4, featuring animated project filters, accessible navigation, and direct contact links.",
+        tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
         isCurrentSite: true,
         githubUrl: "https://github.com/Shalom-Samuel-011/shalom.portfolio",
         featured: true,
